@@ -25,7 +25,7 @@ r.obtainTables() # collect tables from tasks (works bad)
 Currently, the package cannot be installed by pip, and I didn't think that it is really needed.
 So, to install this package, just download repository, install requirements using pip from requirments.txt and that's all.
 
-# How it works
+# How does it work ?
 It generates a base of all questions in a usable format. User-friendly interface to access data is now in work.
 
 # Root.__init__ params:
