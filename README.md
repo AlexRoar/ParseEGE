@@ -20,26 +20,27 @@ r.topics = [] # custom topics. Empty = all
 r.obtainImages() # collect images from tasks
 r.obtainTables() # collect tables from tasks (works bad)
 ```
+# How it works
+It generates a base of all questions in a usable format. User-friendly interface to access data is now in work.
 
-Service id can be found in the url:
+# Root.__init__ params:
+workdir - relative path to package workdir default = ParseEGE/data/
+service - service string ('inf-ege', 'chem-ege')
+Service id can be found in the URL:
 
 https://inf-ege.sdamgia.ru
 
 https://chem-ege.sdamgia.ru
 
-# Root.__init__ params:
-workdir - relative path to package workdir default = ParseEGE/data/
-service - service string ('inf-ege', 'chem-ege')
-
 
 # Root.parseTasks() params:
-extended - include or not raw html data and sources of task
+extended - include or not raw HTML data and sources of task
 doNotLoadDB - if true, it will not load old DB, but overwrite it
 saveInLoop - save data during the process or save only in the end
 
 # Topics
 
-Topic is the last param in the request:
+The topic is the last param in the request:
 
 https://chem-ege.sdamgia.ru/test?theme=150 - 150
 
@@ -47,7 +48,7 @@ https://inf-ege.sdamgia.ru/test?theme=275 - 275
 
 # Parsed versions
 
-Full parsed version of informatics can be found in ParseEGE/save-inf/parsed.json
+The full parsed version of informatics can be found in ParseEGE/save-inf/parsed.json
 
 # Warning
 
