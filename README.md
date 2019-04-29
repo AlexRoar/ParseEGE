@@ -20,6 +20,11 @@ r.topics = [] # custom topics. Empty = all
 r.obtainImages() # collect images from tasks
 r.obtainTables() # collect tables from tasks (works bad)
 ```
+# Installation
+
+Currently, the package cannot be installed by pip, and I didn't think that it is really needed.
+So, to install this package, just download repository, install requirements using pip from requirments.txt and that's all.
+
 # How it works
 It generates a base of all questions in a usable format. User-friendly interface to access data is now in work.
 
