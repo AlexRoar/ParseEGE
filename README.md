@@ -24,6 +24,7 @@ r.obtainTables() # collect tables from tasks (works bad)
 Service id can be found in the url:
 
 https://inf-ege.sdamgia.ru
+
 https://chem-ege.sdamgia.ru
 
 # Root.parseTasks() params:
@@ -36,4 +37,5 @@ saveInLoop - save data during the process or save only in the end
 Topic is the last param in the request:
 
 https://chem-ege.sdamgia.ru/test?theme=150 - 150
+
 https://inf-ege.sdamgia.ru/test?theme=275 - 275
