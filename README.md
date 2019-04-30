@@ -20,17 +20,18 @@ r.topics = [] # custom topics. Empty = all
 r.obtainImages() # collect images from tasks
 r.obtainTables() # collect tables from tasks (works bad)
 ```
-# Installation
+## Installation
 
 Currently, the package cannot be installed by pip, and I didn't think that it is really needed.
 So, to install this package, just download repository, install requirements using pip from requirments.txt and that's all.
 
-# How does it work ?
+#How does it work ?
 It generates a base of all questions in a usable format. User-friendly interface to access data is now in work.
 
 # Root.__init__ params:
-workdir - relative path to package workdir default = ParseEGE/data/
-service - service string ('inf-ege', 'chem-ege')
+**workdir** - relative path to package workdir default = ParseEGE/data/
+
+**service** - service string ('inf-ege', 'chem-ege')
 Service id can be found in the URL:
 
 https://inf-ege.sdamgia.ru
@@ -39,9 +40,17 @@ https://chem-ege.sdamgia.ru
 
 
 # Root.parseTasks() params:
-extended - include or not raw HTML data and sources of task
-doNotLoadDB - if true, it will not load old DB, but overwrite it
-saveInLoop - save data during the process or save only in the end
+**extended** - include or not raw HTML data and sources of task.
+
+**doNotLoadDB** - if true, it will not load old DB, but overwrite it.
+
+**saveInLoop** - save data during the process or save only in the end.
+
+# Root.obtainImages()
+
+It will collect images from questions of selected topics. Script saves images in **workdir**/**service**/img/**ege task number**/**task number**
+
+Ex: 
 
 # Topics
 
@@ -58,3 +67,9 @@ The full parsed version of informatics can be found in ParseEGE/save-inf/parsed.
 # Warning
 
 This package has not been tested properly on everything besides informatics. Feel free to report about errors
+
+# Drawbacks
+
+Do not use text representation of solution or question if it contains tables. Use raw html data and render it manually. You can try to generate images of tables using method obtainTables(), but it works properly only in certain cases. 
+
+
