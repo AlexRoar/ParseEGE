@@ -50,7 +50,15 @@ https://chem-ege.sdamgia.ru
 
 It will collect images from questions of selected topics. Script saves images in **workdir**/**service**/img/**ege task number**/**task number**
 
-Ex: 
+Ex: ParseEGE/data/inf-ege/img/1/136/image_DDK7.svg
+
+# Root.obtainTables()
+
+It will collect tables from questions of selected topics. Script saves images in **workdir**/**service**/tables/**ege task number**/**task number**
+
+**It works properly only in several cases (tasks № 2, 12, and others)**
+
+Ex: ParseEGE/data/inf-ege/tables/2/9353/table_5CVD.png
 
 # Topics
 
@@ -70,6 +78,4 @@ This package has not been tested properly on everything besides informatics. Fee
 
 # Drawbacks
 
-Do not use text representation of solution or question if it contains tables. Use raw html data and render it manually. You can try to generate images of tables using method obtainTables(), but it works properly only in certain cases. 
-
-
+Do not use text representation of solution or question if it contains tables. Use raw HTML data and render it manually. You can try to generate images of tables using method obtainTables(), but it works properly only in certain cases.
