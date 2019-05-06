@@ -440,7 +440,7 @@ class Root:
                 'data': tasks
             }
             writer = open(tmp_path+'/tasks.json','w')
-            json.dump(exploded,writer)
+            json.dump(exploded,writer,ensure_ascii=False)
             writer.close()
 
 
