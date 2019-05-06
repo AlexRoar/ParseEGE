@@ -386,7 +386,7 @@ class Root:
                         os.makedirs(path)
 
                     path += '/table_' + self.id_generator(size=4) + '.png'
-                    ax.savefig(path, pad_inches=0.01,dpi = 300, bbox_inches='tight')
+                    ax.savefig(path, pad_inches=0.01, dpi=300, bbox_inches='tight')
                     plt.close(ax)
 
     def id_generator(self, size=6, chars=string.ascii_uppercase + string.digits):
@@ -432,21 +432,17 @@ class Root:
 
         for i in tqdm(range(len(keys))):
             i = keys[i]
-            tmp_path = path+'/'+i
+            tmp_path = path + '/' + i
             os.mkdir(tmp_path)
             tasks = old[i]
             exploded = {
                 'updated': str(datetime.datetime.now()),
-                'data': tasks
+                'data': tasks,
+                'taskEGENumber': i.strip()
             }
-            writer = open(tmp_path+'/tasks.json','w')
-            json.dump(exploded,writer,ensure_ascii=False)
+            writer = open(tmp_path + '/tasks.json', 'w')
+            json.dump(exploded, writer, ensure_ascii=False, indent=4, sort_keys=True)
             writer.close()
-
-
-
-
-
 
 
 class Getter:
