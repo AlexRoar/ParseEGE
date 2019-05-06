@@ -427,6 +427,7 @@ class Root:
         old = old[self.service]['data']
 
         keys = list(old.keys())
+
         # print(keys)
 
         for i in tqdm(range(len(keys))):
