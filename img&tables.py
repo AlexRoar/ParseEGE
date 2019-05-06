@@ -4,9 +4,14 @@
 
 from ParseEGE.core import Root
 
-r = Root()
+# services:
+# inf = inf-ege
+# history = hist-ege
+# r = Root(workdir='dir to save files', service='service')
 
-# r.parseTasks() # Not fast)
+r = Root() # Default - informatics
+
+r.parseTasks(extended=True, doNotLoadDB=False, saveInLoop=True)
 # r.parseTasks(extended=False) # Fast
 
 r.topics = []

@@ -73,6 +73,12 @@ class Root:
                 self.topics = old[self.service]['data']
         return self.topics
 
+    def loadDB(self):
+        previous = open(self.workdir + 'parsed.json')
+        old = json.load(previous)
+        previous.close()
+        return old
+
     def parseTasks(self, extended=True, doNotLoadDB=True, saveInLoop=False):
         base = {
             'updated': str(datetime.datetime.now()),
@@ -84,9 +90,7 @@ class Root:
         old = {}
         if not doNotLoadDB:
             try:
-                previous = open(self.workdir + 'parsed.json')
-                old = json.load(previous)
-                previous.close()
+                old = self.loadDB()
                 base['data'] = old[self.service]['data']
                 base['dataId'] = old[self.service]['dataId']
             except:
@@ -410,6 +414,38 @@ class Root:
             else:
                 cell.set_facecolor(row_colors[k[0] % len(row_colors)])
         return ax
+
+    def explode(self):
+        path = self.workdir.strip() + self.service.strip() + '/exploded'
+        if not os.path.isdir(path):
+            os.mkdir(path)
+        else:
+            shutil.rmtree(path)
+            os.mkdir(path)
+
+        old = self.loadDB()
+        old = old[self.service]['data']
+
+        keys = list(old.keys())
+        # print(keys)
+
+        for i in tqdm(range(len(keys))):
+            i = keys[i]
+            tmp_path = path+'/'+i
+            os.mkdir(tmp_path)
+            tasks = old[i]
+            exploded = {
+                'updated': str(datetime.datetime.now()),
+                'data': tasks
+            }
+            writer = open(tmp_path+'/tasks.json','w')
+            json.dump(exploded,writer)
+            writer.close()
+
+
+
+
+
 
 
 class Getter:
